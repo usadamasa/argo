@@ -226,7 +226,7 @@ func ApplySubmitOpts(wf *wfv1.Workflow, opts *wfv1.SubmitOpts) error {
 			if len(parts) == 1 {
 				return fmt.Errorf("Expected parameter of the form: NAME=VALUE. Received: %s", paramStr)
 			}
-			intOrString := intstr.Parse(parts[2])
+			intOrString := intstr.Parse(parts[1])
 			param := wfv1.Parameter{
 				Name:  parts[0],
 				Value: &intOrString,
